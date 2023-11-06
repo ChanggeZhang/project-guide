@@ -1,0 +1,53 @@
+{
+  "name": "电力工程造价智能咨询系统",
+  "icon": "https://p1.ssl.qhimg.com/t01bc0041350e4c4938.png",
+  "avatar": "https://tse3-mm.cn.bing.net/th/id/OIP-C.X6jvgAH5HSxNn5touH3PDQHaHH?pid=ImgDet&rs=1",
+  "formValue": {
+    "login": {
+      "label": "登录",
+      "fields": [{
+        "id": "account",
+        "name": "账号",
+        "required": true,
+        "icon": "user",
+        "placeholder": "输入邮箱或者手机号或者账号",
+        "type": "email",
+        "multiple": true
+      },
+        {
+          "id": "pwd",
+          "name": "密码",
+          "required": true,
+          "type": "password",
+          "icon": "unlock-keyhole",
+          "placeholder": "输入密码"
+        }],
+      "verify": true,
+      "verifyType": "sms"
+    },
+    "forget": {
+      "label": "忘记密码",
+      "fields": [{
+        "id": "account",
+        "name": "账号",
+        "required": true,
+        "icon": "user",
+        "placeholder": "输入账号"
+      },{
+        "id": "mobile",
+        "name": "手机号",
+        "required": true,
+        "icon": "mobile-screen",
+        "placeholder": "输入手机号"
+      },{
+        "id": "email",
+        "name": "邮箱",
+        "required": true,
+        "icon": "at",
+        "placeholder": "输入邮箱"
+      }],
+      "verify": true,
+      "verifyType": "sms"
+    }
+  }
+}

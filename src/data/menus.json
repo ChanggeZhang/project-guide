@@ -1,0 +1,846 @@
+{
+  "left": [
+    {
+      "id": 1,
+      "level": 0,
+      "name": "首页",
+      "icon": "home"
+    },
+    {
+      "id": 2,
+      "level": 0,
+      "name": "项目管理",
+      "shortName": "项目信息",
+      "icon": "server",
+      "formInfo": {
+        "canAdd": true,
+        "search": [
+          {
+            "id": "name",
+            "name": "名称"
+          },
+          {
+            "id": "type",
+            "name": "类型",
+            "type": "select",
+            "options": [{
+              "label": "全部",
+              "selected": true
+            }]
+          },
+          {
+            "id": "step",
+            "name": "预计开始时间",
+            "type": "date"
+          }
+        ],
+        "list": {
+          "selectable": true,
+          "columns": [
+            "项目名称",
+            "项目类型",
+            "项目所在地",
+            "项目工期",
+            "项目预计开始时间",
+            "项目录入时间",
+            "操作"
+          ],
+          "data": [
+            [
+              "项目项目想",
+              "南方电网",
+              "四川省成都市",
+              "2年3个月",
+              "2020-04-01",
+              "2019-06-26",
+              [
+                {
+                  "label": "编辑",
+                  "type": "button",
+                  "cls": "primary",
+                  "id": "edit"
+                },
+                {
+                  "label": "删除",
+                  "type": "button",
+                  "cls": "primary",
+                  "id": "del"
+                },
+                {
+                  "label": "工程造价估算",
+                  "type": "button",
+                  "cls": "primary",
+                  "id": "other",
+                  "formInfo": {
+                    "form": {
+                      "btnLabel": ["估算"],
+                      "fields": [{
+                        "id": "rule",
+                        "name": "估值规则",
+                        "type": "select",
+                        "options": [{
+                          "label": "按吧按吧按吧按吧",
+                          "selected": true
+                        }]
+                      },{
+                        "id": "hr",
+                        "name": "人力成本",
+                        "type": "text",
+                        "value": "23万"
+                      },{
+                        "id": "machine",
+                        "name": "设备成本",
+                        "type": "text",
+                        "value": "230万"
+                      },{
+                        "id": "material",
+                        "name": "材料成本",
+                        "type": "text",
+                        "value": "20万"
+                      }]
+                    }
+                  }
+                }
+              ]
+            ],
+            [
+              "项目项目想",
+              "南方电网",
+              "四川省成都市",
+              "2年3个月",
+              "2020-04-01",
+              "2019-06-26",
+              [
+                {
+                  "label": "编辑",
+                  "type": "button",
+                  "cls": "primary",
+                  "id": "edit"
+                },
+                {
+                  "label": "删除",
+                  "type": "button",
+                  "cls": "primary",
+                  "id": "del"
+                },
+                {
+                  "label": "工程造价估算",
+                  "type": "button",
+                  "cls": "primary",
+                  "id": "other",
+                  "formInfo": {
+                    "form": {
+                      "btnLabel": ["估算"],
+                      "fields": [{
+                        "id": "rule",
+                        "name": "估值规则",
+                        "type": "select",
+                        "options": [{
+                          "label": "按吧按吧按吧按吧",
+                          "selected": true
+                        }]
+                      },{
+                        "id": "hr",
+                        "name": "人力成本",
+                        "type": "text",
+                        "value": "23万"
+                      },{
+                        "id": "machine",
+                        "name": "设备成本",
+                        "type": "text",
+                        "value": "230万"
+                      },{
+                        "id": "material",
+                        "name": "材料成本",
+                        "type": "text",
+                        "value": "20万"
+                      }]
+                    }
+                  }
+                }
+              ]
+            ]
+          ],
+          "fields": [
+            {
+              "id": "machineNo",
+              "value": "sb202310210001",
+              "type": "text",
+              "name": "项目编号",
+              "readonly": true
+            },
+            {
+              "id": "machineName",
+              "value": "项目项目乡",
+              "type": "text",
+              "name": "项目名称",
+              "readonly": false
+            },
+            {
+              "id": "location",
+              "value": "四川省成都市",
+              "type": "text",
+              "name": "项目所在地",
+              "readonly": false
+            },
+            {
+              "id": "art",
+              "value": "2年3个月",
+              "type": "text",
+              "name": "项目工期",
+              "readonly": false
+            },
+            {
+              "id": "entryDate",
+              "value": "2023-01-12",
+              "type": "date",
+              "name": "录入时间",
+              "readonly": false
+            },
+            {
+              "id": "investTime",
+              "value": "2023-02-01",
+              "type": "date",
+              "name": "达成协议时间",
+              "readonly": false
+            },
+            {
+              "id": "startDate",
+              "value": "2023-02-12",
+              "type": "date",
+              "name": "预计开始时间",
+              "readonly": false
+            },
+            {
+              "id": "startDate",
+              "value": "2025-05-12",
+              "type": "date",
+              "name": "预计结束时间",
+              "readonly": false
+            },
+            {
+              "id": "startDate",
+              "value": "2023-02-12",
+              "type": "date",
+              "name": "实际开始时间",
+              "readonly": false
+            },
+            {
+              "id": "startDate",
+              "value": "2025-05-12",
+              "type": "date",
+              "name": "实际结束时间",
+              "readonly": false
+            },
+            {
+              "id": "specParams",
+              "value": {
+                "发电量": "2500亿兆瓦",
+                "预计寿命": "50年",
+                "维护周期": "100年",
+                "辐射范围": "华东华南地区以及台湾省，海南省",
+                "投入使用最后期限": "2026-01-01"
+              },
+              "type": "table",
+              "name": "预估细则",
+              "readonly": false,
+              "columns": 2
+            },
+            {
+              "id": "totalPrice",
+              "value": "2300亿",
+              "type": "text",
+              "name": "预估总包",
+              "readonly": false
+            },
+            {
+              "id": "netType",
+              "options": [
+                {
+                  "label": "南方电网",
+                  "selected": true
+                },
+                {
+                  "label": "国家电网"
+                }
+              ],
+              "type": "select",
+              "multiple": false,
+              "name": "项目类型",
+              "readonly": false
+            },
+            {
+              "id": "progress",
+              "options": [
+                {
+                  "label": "洽谈中",
+                  "selected": true
+                },
+                {
+                  "label": "已达成"
+                },
+                {
+                  "label": "已筹备"
+                }
+              ],
+              "type": "select",
+              "multiple": false,
+              "name": "项目进度",
+              "readonly": false
+            },
+            {
+              "id": "files",
+              "value": [
+                "工程审批文件.pdf",
+                "工程进度规划.pdf",
+                "工程造价预算文件.pdf"
+              ],
+              "type": "file",
+              "name": "资料文件",
+              "readonly": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "level": 0,
+      "name": "估算规则管理",
+      "shortName": "估算规则",
+      "icon": "money-bill-1-wave",
+      "formInfo": {
+        "canAdd": true,
+        "search": [
+        ],
+        "list": {
+          "selectable": true,
+          "columns": [
+            "规则名称",
+            "水费标准",
+            "电费标准",
+            "管理费标准",
+            "材料费用标准",
+            "添加时间",
+            "操作"
+          ],
+          "data": [
+            [
+              "规则11",
+              "3元/吨",
+              "1元/度",
+              "200元/月",
+              "30000元/吨",
+              "2023-03-01",
+              [
+                {
+                  "label": "编辑",
+                  "type": "button",
+                  "cls": "primary",
+                  "id": "edit"
+                },
+                {
+                  "label": "删除",
+                  "type": "button",
+                  "cls": "primary tip-error",
+                  "id": "del"
+                }
+              ]
+            ],
+            [
+              "规则11",
+              "3元/吨",
+              "1元/度",
+              "200元/月",
+              "30000元/吨",
+              "2023-03-01",
+              [
+                {
+                  "label": "编辑",
+                  "type": "button",
+                  "cls": "primary",
+                  "id": "edit"
+                },
+                {
+                  "label": "删除",
+                  "type": "button",
+                  "cls": "primary tip-error",
+                  "id": "del"
+                }
+              ]
+            ]
+          ],
+          "fields": [
+            {
+              "id": "ruleNo",
+              "value": "gz202310210001",
+              "type": "text",
+              "name": "规则编号",
+              "readonly": true
+            },
+            {
+              "id": "ruleName",
+              "value": "规则111",
+              "type": "text",
+              "name": "规则名称",
+              "readonly": false
+            },
+            {
+              "id": "water",
+              "value": "3",
+              "type": "text",
+              "name": "水费（元/吨）",
+              "readonly": false
+            },
+            {
+              "id": "electricity",
+              "value": "1",
+              "type": "text",
+              "name": "电费（元/度）",
+              "readonly": false
+            },
+            {
+              "id": "manage",
+              "value": "200",
+              "type": "text",
+              "name": "管理费（元/月）",
+              "readonly": false
+            },
+            {
+              "id": "material",
+              "value": "30000",
+              "type": "text",
+              "name": "材料费（元/吨）",
+              "readonly": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "level": 0,
+      "name": "问题管理",
+      "shortName": "提问",
+      "icon": "circle-question",
+      "formInfo": {
+        "canAdd": true,
+        "search": [
+        ],
+        "list": {
+          "selectable": true,
+          "columns": [
+            "问题类型",
+            "问题出现时间",
+            "问题解决方案",
+            "问题解决结果",
+            "问题解决时间",
+            "操作"
+          ],
+          "data": [[
+            "初级问题",
+            "2023-02-12 11:11:11",
+            "与提出者协商一致,暂不解决",
+            "已解决",
+            "2023-02-12 13:59:59",
+            [
+              {
+                "label": "编辑",
+                "type": "button",
+                "cls": "primary",
+                "id": "edit"
+              },
+              {
+                "label": "删除",
+                "type": "button",
+                "cls": "primary tip-error",
+                "id": "del"
+              },
+              {
+                "label": "查看",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail"
+              }
+            ]
+          ],[
+            "初级问题",
+            "2023-02-12 11:11:11",
+            "与提出者协商一致,暂不解决",
+            "已解决",
+            "2023-02-12 13:59:59",
+            [
+              {
+                "label": "编辑",
+                "type": "button",
+                "cls": "primary",
+                "id": "edit"
+              },
+              {
+                "label": "删除",
+                "type": "button",
+                "cls": "primary tip-error",
+                "id": "del"
+              },
+              {
+                "label": "查看",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail"
+              }
+            ]
+          ]],
+          "fields": [{
+            "id": "question",
+            "value": "这是一个很严肃的问题",
+            "type": "text",
+            "name": "标题",
+            "readonly": false
+          },{
+            "id": "type",
+            "options": [
+              {
+                "label": "初级问题",
+                "selected": true
+              }
+            ],
+            "type": "select",
+            "multiple": false,
+            "name": "问题类型",
+            "readonly": false
+          },{
+            "id": "serious",
+            "options": [
+              {
+                "label": "一般",
+                "selected": true
+              }
+            ],
+            "type": "select",
+            "multiple": false,
+            "name": "严重程度",
+            "readonly": false
+          },{
+            "id": "progress",
+            "options": [
+              {
+                "label": "已处理",
+                "selected": true
+              }
+            ],
+            "type": "select",
+            "multiple": false,
+            "name": "解决结果",
+            "readonly": false
+          },
+            {
+              "id": "appearTime",
+              "value": "2023-02-11 11:11:11",
+              "type": "datetime",
+              "name": "出现时间",
+              "readonly": false
+            },
+            {
+              "id": "resolveTime",
+              "value": "2023-02-11 14:11:11",
+              "type": "datetime",
+              "name": "解决时间",
+              "readonly": false
+            },
+            {
+              "id": "des",
+              "value": "这是一个很严肃的问题，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重",
+              "type": "fulltext",
+              "name": "详细描述",
+              "readonly": false
+            },
+            {
+              "id": "solution",
+              "value": "已经解决了\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00",
+              "type": "fulltext",
+              "name": "解决方案",
+              "readonly": false
+            },
+            {
+              "id": "satisfaction",
+              "value": "4",
+              "type": "star",
+              "name": "客户满意度",
+              "readonly": false
+            }]
+        }
+      }
+    },
+    {
+      "id": 5,
+      "level": 0,
+      "name": "用户管理",
+      "shortName": "用户信息",
+      "icon": "users",
+      "formInfo": {
+        "canAdd": true,
+        "search": [{
+          "id": "account",
+          "name": "用户账号",
+          "type": "text"
+        },{
+          "id": "role",
+          "name": "角色",
+          "type": "text"
+        }
+        ],
+        "list": {
+          "selectable": true,
+          "columns": [
+            "用户账号",
+            "密码",
+            "角色",
+            "添加时间",
+            "启/禁用",
+            "操作"
+          ],
+          "data": [[
+            "13254451",
+            "123456",
+            "管理员、总经办",
+            "2023-01-01",
+            "禁用",
+            [{
+              "label": "编辑",
+              "type": "button",
+              "cls": "primary",
+              "id": "edit"
+            },
+              {
+                "label": "删除",
+                "type": "button",
+                "cls": "primary tip-error",
+                "id": "del"
+              },
+              {
+                "label": "查看",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail"
+              }]
+          ],[
+            "13254451",
+            "123456",
+            "管理员、总经办",
+            "2023-01-01",
+            "启用",
+            [{
+              "label": "编辑",
+              "type": "button",
+              "cls": "primary",
+              "id": "edit"
+            },
+              {
+                "label": "删除",
+                "type": "button",
+                "cls": "primary tip-error",
+                "id": "del"
+              },
+              {
+                "label": "查看",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail"
+              }]
+          ]],
+          "fields": [{
+            "id": "userNo",
+            "value": "yh20230111012",
+            "type": "text",
+            "name": "用户编号",
+            "readonly": true
+          },{
+            "id": "account",
+            "value": "20230111012",
+            "type": "text",
+            "name": "账号",
+            "readonly": true
+          },{
+            "id": "password",
+            "value": "123456",
+            "type": "password",
+            "name": "密码",
+            "readonly": true
+          },{
+            "id": "role",
+            "options": [
+              {
+                "label": "管理员",
+                "selected": true
+              },{
+                "label": "总经办",
+                "selected": true
+              }
+            ],
+            "type": "select",
+            "multiple": true,
+            "name": "角色",
+            "readonly": false
+          },{
+            "id": "state",
+            "options": {
+              "on": "正常",
+              "off": "禁用"
+            },
+            "value": "on",
+            "type": "switch",
+            "name": "状态",
+            "readonly": false
+          }]
+        }
+      }
+    }
+  ],
+  "top": [
+    {
+      "name": "信息修改",
+      "id": 8,
+      "level": 0,
+      "icon": "pen-to-square",
+      "formInfo": {
+        "fields": [
+          {
+            "id": "account",
+            "name": "账号",
+            "required": true,
+            "placeholder": "输入账号",
+            "value": "admin"
+          },
+          {
+            "id": "mobile",
+            "name": "手机号",
+            "placeholder": "输入手机号",
+            "value": "13235501023"
+          },
+          {
+            "id": "email",
+            "name": "邮箱",
+            "required": true,
+            "placeholder": "输入邮箱",
+            "value": "13235501023@163.com"
+          },
+          {
+            "id": "name",
+            "name": "姓名",
+            "required": true,
+            "placeholder": "输入姓名",
+            "value": "张三"
+          },
+          {
+            "id": "nickname",
+            "name": "昵称",
+            "required": true,
+            "placeholder": "输入昵称",
+            "value": "张三昵称"
+          },
+          {
+            "id": "gender",
+            "name": "性别",
+            "required": true,
+            "options": [
+              {
+                "label": "男",
+                "selected": true
+              },
+              {
+                "label": "女"
+              }
+            ],
+            "type": "select",
+            "multiple": false
+          },
+          {
+            "id": "avatar",
+            "name": "头像",
+            "required": true,
+            "image": {
+              "val": [
+                "https://tse3-mm.cn.bing.net/th/id/OIP-C.X6jvgAH5HSxNn5touH3PDQHaHH?pid=ImgDet&rs=1"
+              ],
+              "type": "circle avatar"
+            },
+            "type": "image",
+            "placeholder": "点击上传新头像"
+          },
+          {
+            "id": "birthday",
+            "name": "生日",
+            "required": true,
+            "value": "2000-01-01",
+            "type": "date",
+            "placeholder": "请选择头像"
+          },
+          {
+            "id": "area",
+            "name": "出生地区",
+            "required": true,
+            "type": "area-select",
+            "options": [
+              [{
+                "label": "省"
+              },{
+                "label": "四川省",
+                "selected": true
+              }],[{
+                "label": "市"
+              },{
+                "label": "成都市",
+                "selected": true
+              }],[{
+                "label": "区县"
+              },{
+                "label": "龙泉驿区",
+                "selected": true
+              }],[{
+                "label": "村镇"
+              },{
+                "label": "十陵镇",
+                "selected": true
+              }]
+            ],
+            "improve": "来龙地铁站对面",
+            "placeholder": "请选择"
+          }
+        ],
+        "verify": false
+      }
+    },
+    {
+      "name": "密码修改",
+      "id": 9,
+      "level": 0,
+      "icon": "pencil",
+      "formInfo": {
+        "fields": [
+          {
+            "id": "pwd",
+            "name": "旧密码",
+            "required": true,
+            "type": "password",
+            "placeholder": "输入旧密码"
+          },
+          {
+            "id": "newPwd",
+            "name": "新密码",
+            "required": true,
+            "type": "password",
+            "placeholder": "输入新密码"
+          },
+          {
+            "id": "pwdConfirm",
+            "name": "确认密码",
+            "type": "password",
+            "required": true,
+            "placeholder": "输确认密码"
+          }
+        ],
+        "verify": false
+      }
+    }
+  ]
+}
