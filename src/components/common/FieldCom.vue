@@ -44,8 +44,8 @@
   </div>
   <!--      复选框-->
   <div class="switch form-input" v-if="field.type === 'switch'">
-      <input type="checkbox" :name="field.id" :disabled="readonly || field.readonly" :id="`${field.id}_${op.label}`" class="switch-input" :checked="op.selected"  />
-      <label :for="`${field.id}_${op.label}`" :class="['switch-button',`${field.options[field.value]}`]">{{op.label}}</label>
+      <input type="checkbox" :name="field.id" :disabled="readonly || field.readonly" :id="`${field.id}`" class="switch-input" :checked="selected === 'on'" @change="switchLabel"  />
+    <label :for="`${field.id}`" :class="['switch-button']"><span>{{field.options[selected]}}</span></label>
   </div>
   <!--      密码-->
   <input type="password" class="form-input"  :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'password'" />
@@ -106,6 +106,24 @@ export default {
     readonly:{
       type: Boolean,
       default: () => false
+    }
+  },
+  created() {
+    if(this.field.type === 'switch'){
+      this.switchOption = this.field.options
+      this.selected = this.field.value
+    }
+  },
+  data(){
+    return {
+      switchOption: {},
+      selected: "on"
+    }
+  },
+  methods:{
+    switchLabel(e){
+      let value = e.target.checked
+      this.selected = value ? 'on' : 'off'
     }
   }
 }

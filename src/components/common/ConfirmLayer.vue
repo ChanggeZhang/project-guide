@@ -1,4 +1,5 @@
 <template>
+  <div class="background-mask" v-if="showLayer"></div>
   <div class="layer" v-if="showLayer">
     <div class="layer-title" :showTitle="showTitle">
         {{title}}

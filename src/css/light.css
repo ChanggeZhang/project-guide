@@ -2,6 +2,9 @@
     --top: 74px;
     --padding-left: 16px;
     --menu-background-color: #02534a;
+    --top-menu-background-color: #02534a;
+    --menu-item-color: #afafaf;
+    --top-menu-item-color: #afafaf;
     --menu-width: 12%;
     --menu-min-width: 4rem;
     --menu-font-size: 20px;
@@ -18,7 +21,7 @@
 
 body {
     margin: 0 !important;
-    color: #fff;
+    color: var(--menu-item-color);
     font-size: var(--menu-font-size);
 }
 
@@ -39,7 +42,7 @@ body {
     display: flex;
     align-items: center;
     filter: drop-shadow(5px 3px 7px var(--menu-background-color));
-    color: #afafaf;
+    color: var(--menu-item-color);
     font-size: var(--menu-font-size);
 }
 .menu-icon{
@@ -55,11 +58,12 @@ body {
 
 .top-context {
     position: absolute;
-    background-color: var(--menu-background-color);
+    background-color: var(--top-menu-background-color);
     height: var(--top);
     width: 100%;
     display: inline-flex;
     line-height: var(--top);
+    color: var(--top-menu-item-color);
 }
 
 .project-name {
@@ -555,7 +559,7 @@ input:required,select:required,textarea:required{
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 0;
+    z-index: 100;
     width: 100vw;
     height: 100vh;
     background: rgba(0,0,0,0.5);
@@ -569,6 +573,52 @@ input:required,select:required,textarea:required{
     color: var(--star-color);
 }
 
-.switch{
+.switch-input{
+    display: none;
+}
 
+.switch-button {
+    position: relative;
+    display: flex;
+    width: 70px;
+    border: #afafaf 3px solid;
+    border-radius: 35px;
+    height: 30px;
+    font-size: medium;
+    line-height: 30px;
+    background-color: #dfdfdf;
+    color: #000000;
+    text-align: right;
+}
+
+.switch-button:before {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    content: "";
+    background-color: #ffffff;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.switch-button >span{
+    position: absolute;
+    right: 5px;
+}
+
+.switch-input:checked + .switch-button{
+    background-color: var(--menu-background-color);
+    color: #ffffff;
+    text-align: left;
+}
+
+.switch-input:checked + .switch-button:before{
+    transform: translateX(calc(70px - 2px - 30px));
+    -webkit-transform: translateX(calc(70px - 2px - 30px));
+    -moz-transform: translateX(calc(70px - 2px - 30px));
+    -ms-transform: translateX(calc(70px - 2px - 30px));
+}
+
+.switch-input:checked + .switch-button >span{
+    left: 5px;
 }

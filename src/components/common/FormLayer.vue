@@ -1,4 +1,5 @@
 <template>
+  <div class="background-mask" v-if="show"></div>
   <div class="layer form-layer" v-if="show">
     <div class="layer-title">
       {{formInfo.label}}

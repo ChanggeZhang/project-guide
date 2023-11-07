@@ -7,6 +7,7 @@
     <div class="right">
       <img class="avatar" :src="projectInfo?.avatar" />
       <div class="btn-exit" @click="quit"><font-awesome-icon :icon="`fa-solid fa-power-off`" />退出登录</div>
+      <div class="btn-exit" @click="switchTheme"><font-awesome-icon :icon="`fa-solid fa-cookie-bite`" />主题</div>
       <span  class="more" @click="showMore"><font-awesome-icon icon="fa-solid fa-caret-down" /></span>
     </div>
     <div class="top-menu-container" v-if="showTopMenu" @mouseleave="hideMore">
@@ -19,19 +20,21 @@
       </div>
     </div>
   </div>
-  <form-layer :show="showForm"
+  <form-layer v-if="showForm" :show="showForm"
               :form-info="form"
               :btns="formBtns" />
+  <theme-setting :show="showTheme" @close="closetheme"></theme-setting>
 </template>
 
 <script>
   import {toggleMenu} from "@/js/menu";
   import {Tip} from "@/js/enums";
   import FormLayer from "@/components/common/FormLayer.vue";
+  import ThemeSetting from "@/components/common/ThemeSetting.vue";
 
   export default {
     name: "TopMenu",
-    components: {FormLayer },
+    components: {ThemeSetting, FormLayer },
     props:{
       projectInfo: {
         type: Object,
@@ -48,6 +51,7 @@
     },
     data(){
       return {
+        showTheme: false,
         showTopMenu: false,
         showQuit: false,
         showForm: false,
@@ -69,6 +73,12 @@
       }
     },
     methods: {
+      switchTheme(){
+        this.showTheme = true
+      },
+      closetheme(){
+        this.showTheme = false
+      },
       showChildren(that,menu){
         toggleMenu(this,menu);
         if(!menu.hasChildren){
