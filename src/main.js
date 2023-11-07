@@ -25,6 +25,5 @@ let app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon)
     .use(BrowserPlugin)
     .mount('#app')
-
 app.config.globalProperties.$layer = Layer
 app.config.globalProperties.$tip = Tip

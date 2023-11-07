@@ -10,8 +10,11 @@
     </div>
   <div class="main-content">
     <div class="empty" v-if="form.empty">
-      欢迎登陆<br/>
-      <span class="empty-title">{{projectName}}</span>
+      <div class="empty-title-group">
+        欢迎登陆<br/>
+        <span class="empty-title">{{projectName}}</span>
+      </div>
+      <main-page></main-page>
     </div>
     <div class="main-body" v-if="!form?.empty">
       <search-com :fields="form.search" v-if="form.search && form.search.length" />
@@ -30,10 +33,12 @@
   import ListTable from "@/components/common/ListTable.vue";
   import EditForm from "@/components/common/EditForm.vue";
   import {OpType, Tip} from "@/js/enums";
+  import MainPage from "@/components/structure/MainPage.vue";
 
   export default {
     name: "ContextMenu",
     components:{
+      MainPage,
       EditForm,
       SearchCom,
       ListTable
