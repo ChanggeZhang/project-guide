@@ -156,7 +156,19 @@ body {
     margin-bottom: 7px;
 }
 
-.btn-middle >*{
+.btn-row{
+    width:100%!important;
+    padding-top: 5px;
+    justify-content: end;
+    margin: 0px 0px 15px 0px!important;
+    min-height: 1.8rem;
+}
+
+.btn-right{
+    justify-content: flex-end;
+}
+
+.btn-middle,.btn-middle >*{
     width: 7rem;
     height: var(--btn-middle-height);
     line-height: var(--btn-middle-height);
@@ -172,7 +184,7 @@ body {
     cursor: pointer;
 }
 
-.btn-text >*{
+.btn-text,.btn-text >*{
     width: max-content;
     height: 1rem;
     line-height: 1rem;
@@ -181,7 +193,7 @@ body {
     text-decoration: underline;
 }
 
-.btn-text >*:hover{
+.btn-text,.btn-text >*:hover{
     width: max-content;
     height: 1rem;
     line-height: 1rem;
@@ -190,19 +202,28 @@ body {
     color: #00abff;
 }
 
-.btn-auto >*{
+.btn-auto,.btn-auto >*{
     padding: 4px;
     vertical-align: center;
     margin: 15px;
 }
 
-.btn-primary{
+.btn-primary,.btn-primary >*{
     color: #fff;
     background-color: var(--menu-background-color);
 }
 
+.btn{
+    margin-left:5px;
+}
+
 .tip-info{
     color: rgba(0, 0, 0, 0.8);
+}
+
+.tip-theme{
+    color: var(--menu-background-color);
+    filter: opacity(0.8);
 }
 
 .tip-warn{
@@ -210,7 +231,7 @@ body {
 }
 
 .tip-error{
-    color: #ff4400;
+    color: #ff1100;
 }
 
 .tip-question{
@@ -380,17 +401,6 @@ body {
 
 .search-form-item:last-child{
     justify-content: end;
-}
-
-.btn-row{
-    width:100%;
-    height: max-content;
-    padding-top: 5px;
-    justify-content: end;
-}
-
-.btn{
-    margin-left:5px;
 }
 
 .table-container{
@@ -673,5 +683,8 @@ input:required,select:required,textarea:required{
 }
 
 .main-block-title{
-
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--menu-background-color);
+    filter: opacity(0.6);
 }

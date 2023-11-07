@@ -1,11 +1,11 @@
 <template>
   <div class="main-page-content">
-    <div class="btn btn-group btn-middle">
+    <div class="btn btn-group btn-middle btn-row">
 
     </div>
     <div class="main-block" v-if="chartArray.map.show">
-      <div class="main-block-title btn btn-group btn-middle">
-        <div class="btn-text" @click="removeThis">×</div>
+      <div class="main-block-title btn-group btn-text btn-row">
+        <div class="btn tip-error" @click="removeThis"><font-awesome-icon :icon="['fa','fa-xmark']"></font-awesome-icon></div>
       </div>
       <div class="map-full-county" ref="mapFullCountry" style="width: var(--main-block-width);height: var(--main-block-height)"></div>
     </div>
@@ -14,8 +14,10 @@
 
 <script>
 import * as echarts from "echarts";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 export default {
   name: "MainPage",
+  components: {FontAwesomeIcon},
   data(){
     return {
       chartArray: {
