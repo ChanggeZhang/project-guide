@@ -21,7 +21,7 @@ const Layer = {
                 options.btns = [{
                     label: "确认",
                     type: "button",
-                    cls: "primary",
+                    cls: "btn-primary",
                     id: "ok",
                     click: () => {
                         render(null,layerDom)
@@ -30,7 +30,7 @@ const Layer = {
                 },{
                     label: "取消",
                     type: "button",
-                    cls: "default",
+                    cls: "btn-default",
                     id: "cancel",
                     click: () => {
                         render(null,layerDom)

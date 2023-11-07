@@ -11,7 +11,7 @@
   <div class="main-content">
     <div class="empty" v-if="form.empty">
       欢迎登陆<br/>
-      {{projectName}}
+      <span class="empty-title">{{projectName}}</span>
     </div>
     <div class="main-body" v-if="!form?.empty">
       <search-com :fields="form.search" v-if="form.search && form.search.length" />
@@ -19,7 +19,7 @@
         <div class="btn btn-primary" @click="showAdd">新增</div>
       </div>
       <list-table :info="formList" @click="click"></list-table>
-      <edit-form :show="showEditForm" :label="curMenu.name" :info="editForm" :op-type="opType" :btn-label="btnLabel" :title="title" @close="hideEditForm" />
+      <edit-form :show="showEditForm" :label="curMenu.name" :info="editForm" :op-type="opType" :btn-label="btnLabel" :title="title" :suffix="suffix" @close="hideEditForm" />
     </div>
   </div>
 </template>
@@ -59,6 +59,7 @@
         opType: 'detail',
         curMenu: {},
         title: "",
+        suffix: "",
         btnLabel: []
       }
     },
@@ -105,6 +106,8 @@
           this.showEditForm = true
         }else if(OpType[opType] || this.showEditForm){
           this.editForm = this.form.list.fields
+          this.btnLabel = btn.btnLabel
+          this.suffix = btn.suffix
           this.opType = opType
           this.showEditForm = true
         }else{

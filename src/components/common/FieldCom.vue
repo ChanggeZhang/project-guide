@@ -1,20 +1,20 @@
 <template>
   <!--      文本框-->
-  <input type="text" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="!field.type || field.type === 'text'" />
+  <input type="text" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="!field.type || field.type === 'text'" />
   <!--      图片-->
   <div class="image-group" v-if="field.type === 'image'">
-    <img :class="['form-input',`${field.image.type}`]" v-for="(img) in field.image.val" v-bind:key="img" :src="img"/>
+    <img :class="['form-input',`${field.image.type}`]" v-for="(img) in field.image.val" v-bind:key="img" :src="img" :name="field.id" />
   </div>
   <!--      文本域-->
-  <div class="textarea form-input" :contenteditable="readonly || field.readonly" v-html="field.value" v-if="field.type === 'textarea'"></div>
+  <div class="textarea form-input" :contenteditable="readonly || field.readonly" v-html="field.value" :name="field.id" v-if="field.type === 'textarea'"></div>
   <!--      下拉框-->
-  <select class="select form-input" :disabled="readonly || field.readonly" v-if="field.type === 'select'" :multiple="field.multiple">
+  <select class="select form-input" :disabled="readonly || field.readonly" v-if="field.type === 'select'" :name="field.id" :multiple="field.multiple">
     <option>请选择</option>
     <option v-for="(op) in field.options" v-bind:key="op.label" :selected="op.selected">{{op.label}}</option>
   </select>
   <!--      联动下拉框-->
   <div class="select-union form-input" v-if="field.type === 'select-union'">
-    <select class="select form-input" :disabled="readonly || field.readonly" :multiple="field.multiple" v-for="(item,index) in field.options" v-bind:key="index">
+    <select class="select form-input" :disabled="readonly || field.readonly" :multiple="field.multiple" v-for="(item,index) in field.options" :name="field.id" v-bind:key="index">
       <option v-for="(op) in item" v-bind:key="op.label" :selected="op.selected">{{op.label}}</option>
     </select>
   </div>
@@ -22,11 +22,11 @@
   <div class="form-input" v-if="field.type === 'area-select'">
     <div class="select-union">
       <select class="select form-input" :disabled="readonly || field.readonly" :multiple="field.multiple"
-               v-for="(item,index) in field.options" v-bind:key="index">
+               v-for="(item,index) in field.options" v-bind:key="index" :name="field.id + index">
         <option v-for="(op) in item" v-bind:key="op.label" :selected="op.selected">{{ op.label }}</option>
       </select>
     </div>
-    <textarea class="area-improve form-input" :value="field.improve"></textarea>
+    <textarea class="area-improve form-input" :value="field.improve" :name="field.id + 'improve'"></textarea>
   </div>
   <!--      单选框-->
   <div class="radio-group form-input" v-if="field.type === 'radio'">
@@ -42,35 +42,35 @@
       <label :for="`${field.id}_${op.label}`">{{op.label}}</label>
     </div>
   </div>
-  <!--      复选框-->
+  <!--      开关-->
   <div class="switch form-input" v-if="field.type === 'switch'">
       <input type="checkbox" :name="field.id" :disabled="readonly || field.readonly" :id="`${field.id}`" class="switch-input" :checked="selected === 'on'" @change="switchLabel"  />
     <label :for="`${field.id}`" :class="['switch-button']"><span>{{field.options[selected]}}</span></label>
   </div>
   <!--      密码-->
-  <input type="password" class="form-input"  :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'password'" />
+  <input type="password" class="form-input"  :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'password'" />
 <!--  日期-->
-  <input type="date" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'date'" />
+  <input type="date" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'date'" />
   <!--  日期时间-->
-  <input type="datetime-local" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'datetime'" />
+  <input type="datetime-local" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'datetime'" />
   <!--  时间-->
-  <input type="time" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'time'" />
+  <input type="time" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'time'" />
   <!--  颜色拾取-->
-  <input type="color" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'color'" />
+  <input type="color" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'color'" />
   <!--  颜色拾取-->
-  <input type="email" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'email'" />
+  <input type="email" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'email'" />
   <!--  颜色拾取-->
-  <input type="month" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'month'" />
+  <input type="month" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'month'" />
   <!--  颜色拾取-->
-  <input type="number" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'number'" />
+  <input type="number" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'number'" />
   <!--  颜色拾取-->
-  <input type="tel" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'tel'" />
+  <input type="tel" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'tel'" />
   <!--  颜色拾取-->
-  <input type="url" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'url'" />
+  <input type="url" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'url'" />
   <!--  颜色拾取-->
-  <input type="week" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'week'" />
+  <input type="week" class="form-input" :readonly="readonly || field.readonly" :value="field.value" :name="field.id" v-if="field.type === 'week'" />
 <!--  区间范围-->
-  <input type="range" :min="field.min" :max="field.max" class="form-input" :readonly="readonly || field.readonly" :value="field.value" v-if="field.type === 'range'" />
+  <input type="range" :min="field.min" :max="field.max" class="form-input" :readonly="readonly || field.readonly" :name="field.id" :value="field.value" v-if="field.type === 'range'" />
 <!--  富文本-->
   <full-text :readonly="readonly || field.readonly" :value="field.value" :class="[]" v-if="field.type === 'fulltext'" />
 <!--  表格-->

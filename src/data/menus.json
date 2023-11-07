@@ -9,8 +9,8 @@
     {
       "id": 2,
       "level": 0,
-      "name": "项目管理",
-      "shortName": "项目信息",
+      "name": "招标项目",
+      "shortName": "招标项目",
       "icon": "server",
       "formInfo": {
         "canAdd": true,
@@ -30,141 +30,100 @@
           },
           {
             "id": "step",
-            "name": "预计开始时间",
-            "type": "date"
+            "name": "项目编号",
+            "type": "text"
           }
         ],
         "list": {
           "selectable": true,
           "columns": [
+            "项目编号",
             "项目名称",
+            "开标时间",
+            "招标状态",
             "项目类型",
             "项目所在地",
-            "项目工期",
-            "项目预计开始时间",
-            "项目录入时间",
+            "项目地址",
+            "招标方",
+            "招标方联系人",
+            "招标方式",
+            "项目所属单位",
+            "项目属性",
+            "项目提交时间",
             "操作"
           ],
           "data": [
             [
-              "项目项目想",
-              "南方电网",
-              "四川省成都市",
-              "2年3个月",
+              "xm202311071017151",
+              "南方电网物资管理系统开发",
               "2020-04-01",
-              "2019-06-26",
+              "已结束",
+              "互联网",
+              "四川省成都市高新区蜀绣西路366号",
+              "四川省达州市宣汉县华景镇鲢鱼村2组101-102号",
+              "国家电网四川电网分部",
+              "李经理<br>手机：18296501023<br>邮箱：18296501023@163.com<br>微信：18296501023",
+              "线上招标",
+              "国家电网四川电网分部",
+              "物资管理软件系统",
+              "2022-01-26",
               [
                 {
-                  "label": "编辑",
+                  "label": "详情",
                   "type": "button",
                   "cls": "primary",
-                  "id": "edit"
-                },
-                {
-                  "label": "删除",
-                  "type": "button",
-                  "cls": "primary",
-                  "id": "del"
-                },
-                {
-                  "label": "工程造价估算",
-                  "type": "button",
-                  "cls": "primary",
-                  "id": "other",
-                  "formInfo": {
-                    "form": {
-                      "btnLabel": ["估算"],
-                      "fields": [{
-                        "id": "rule",
-                        "name": "估值规则",
-                        "type": "select",
-                        "options": [{
-                          "label": "按吧按吧按吧按吧",
-                          "selected": true
-                        }]
-                      },{
-                        "id": "hr",
-                        "name": "人力成本",
-                        "type": "text",
-                        "value": "23万"
-                      },{
-                        "id": "machine",
-                        "name": "设备成本",
-                        "type": "text",
-                        "value": "230万"
-                      },{
-                        "id": "material",
-                        "name": "材料成本",
-                        "type": "text",
-                        "value": "20万"
-                      }]
-                    }
-                  }
-                }
+                  "id": "detail"
+                },{
+                "label": "编辑",
+                "type": "button",
+                "cls": "primary",
+                "id": "edit"
+              },{
+                "label": "删除",
+                "type": "button",
+                "cls": "primary tip-error",
+                "id": "del"
+              }
               ]
             ],
             [
-              "项目项目想",
-              "南方电网",
-              "四川省成都市",
-              "2年3个月",
+              "xm202311071017151",
+              "南方电网物资管理系统开发",
               "2020-04-01",
-              "2019-06-26",
+              "已结束",
+              "互联网",
+              "四川省成都市高新区蜀绣西路366号",
+              "四川省达州市宣汉县华景镇鲢鱼村2组101-102号",
+              "国家电网四川电网分部",
+              "李经理<br>手机：18296501023<br>邮箱：18296501023@163.com<br>微信：18296501023",
+              "线上招标",
+              "国家电网四川电网分部",
+              "物资管理软件系统",
+              "2022-01-26",
               [
                 {
-                  "label": "编辑",
+                  "label": "详情",
                   "type": "button",
                   "cls": "primary",
-                  "id": "edit"
-                },
-                {
-                  "label": "删除",
-                  "type": "button",
-                  "cls": "primary",
-                  "id": "del"
-                },
-                {
-                  "label": "工程造价估算",
-                  "type": "button",
-                  "cls": "primary",
-                  "id": "other",
-                  "formInfo": {
-                    "form": {
-                      "btnLabel": ["估算"],
-                      "fields": [{
-                        "id": "rule",
-                        "name": "估值规则",
-                        "type": "select",
-                        "options": [{
-                          "label": "按吧按吧按吧按吧",
-                          "selected": true
-                        }]
-                      },{
-                        "id": "hr",
-                        "name": "人力成本",
-                        "type": "text",
-                        "value": "23万"
-                      },{
-                        "id": "machine",
-                        "name": "设备成本",
-                        "type": "text",
-                        "value": "230万"
-                      },{
-                        "id": "material",
-                        "name": "材料成本",
-                        "type": "text",
-                        "value": "20万"
-                      }]
-                    }
-                  }
-                }
+                  "id": "detail"
+                },{
+                "label": "编辑",
+                "type": "button",
+                "cls": "primary",
+                "id": "edit"
+              },{
+                "label": "删除",
+                "type": "button",
+                "cls": "primary tip-error",
+                "id": "del"
+              }
               ]
             ]
           ],
           "fields": [
             {
               "id": "machineNo",
-              "value": "sb202310210001",
+              "value": "xm202310210001",
               "type": "text",
               "name": "项目编号",
               "readonly": true
@@ -177,126 +136,118 @@
               "readonly": false
             },
             {
-              "id": "location",
-              "value": "四川省成都市",
+              "id": "entryDate",
+              "value": "2023-01-12",
+              "type": "date",
+              "name": "开标时间",
+              "readonly": false
+            },
+            {
+              "id": "state",
+              "options": [{
+                "label": "请选择"
+              },{
+                "label": "已完成",
+                "selected": true
+              }],
+              "type": "select",
+              "name": "招标状态",
+              "readonly": false
+            },
+            {
+              "id": "type",
+              "options": [{
+                "label": "请选择"
+              },{
+                "label": "互联网",
+                "selected": true
+              }],
+              "type": "select",
+              "name": "项目类型",
+              "readonly": false
+            },
+            {
+              "id": "areaProject",
+              "value": "四川省成都市高新区蜀绣西路366号",
               "type": "text",
               "name": "项目所在地",
               "readonly": false
             },
             {
-              "id": "art",
-              "value": "2年3个月",
+              "id": "areaLocation",
+              "value": "四川省达州市宣汉县华景镇鲢鱼村2组101-102号",
               "type": "text",
-              "name": "项目工期",
+              "name": "项目所在地",
               "readonly": false
             },
             {
-              "id": "entryDate",
-              "value": "2023-01-12",
-              "type": "date",
-              "name": "录入时间",
-              "readonly": false
-            },
-            {
-              "id": "investTime",
-              "value": "2023-02-01",
-              "type": "date",
-              "name": "达成协议时间",
-              "readonly": false
-            },
-            {
-              "id": "startDate",
-              "value": "2023-02-12",
-              "type": "date",
-              "name": "预计开始时间",
-              "readonly": false
-            },
-            {
-              "id": "startDate",
-              "value": "2025-05-12",
-              "type": "date",
-              "name": "预计结束时间",
-              "readonly": false
-            },
-            {
-              "id": "startDate",
-              "value": "2023-02-12",
-              "type": "date",
-              "name": "实际开始时间",
-              "readonly": false
-            },
-            {
-              "id": "startDate",
-              "value": "2025-05-12",
-              "type": "date",
-              "name": "实际结束时间",
-              "readonly": false
-            },
-            {
-              "id": "specParams",
-              "value": {
-                "发电量": "2500亿兆瓦",
-                "预计寿命": "50年",
-                "维护周期": "100年",
-                "辐射范围": "华东华南地区以及台湾省，海南省",
-                "投入使用最后期限": "2026-01-01"
-              },
-              "type": "table",
-              "name": "预估细则",
-              "readonly": false,
-              "columns": 2
-            },
-            {
-              "id": "totalPrice",
-              "value": "2300亿",
+              "id": "investor",
+              "value": "国家电网四川电网分部",
               "type": "text",
-              "name": "预估总包",
+              "name": "招标方",
               "readonly": false
             },
             {
-              "id": "netType",
-              "options": [
-                {
-                  "label": "南方电网",
-                  "selected": true
-                },
-                {
-                  "label": "国家电网"
-                }
-              ],
-              "type": "select",
-              "multiple": false,
-              "name": "项目类型",
+              "id": "contact",
+              "value": "李经理",
+              "type": "text",
+              "name": "联系人",
               "readonly": false
             },
             {
-              "id": "progress",
-              "options": [
-                {
-                  "label": "洽谈中",
-                  "selected": true
-                },
-                {
-                  "label": "已达成"
-                },
-                {
-                  "label": "已筹备"
-                }
-              ],
-              "type": "select",
-              "multiple": false,
-              "name": "项目进度",
+              "id": "mobile",
+              "value": "18296501023",
+              "type": "tel",
+              "name": "招标方",
               "readonly": false
             },
             {
-              "id": "files",
-              "value": [
-                "工程审批文件.pdf",
-                "工程进度规划.pdf",
-                "工程造价预算文件.pdf"
-              ],
-              "type": "file",
-              "name": "资料文件",
+              "id": "email",
+              "value": "18296501023@163.com",
+              "type": "email",
+              "name": "邮箱",
+              "readonly": false
+            },
+            {
+              "id": "wechat",
+              "value": "18296501023",
+              "type": "text",
+              "name": "微信",
+              "readonly": false
+            },
+            {
+              "id": "invertType",
+              "options": [{
+                "label": "互联网",
+                "selected": true
+              },{
+                "label": "电话预约"
+              },{
+                "label": "邮箱预约"
+              }],
+              "type": "checkbox",
+              "name": "招标方式",
+              "readonly": false
+            },
+            {
+              "id": "enterprise",
+              "value": "国家电网四川电网分部",
+              "type": "text",
+              "name": "项目所属单位",
+              "readonly": false
+            },
+            {
+              "id": "property",
+              "value": "物资管理软件系统",
+              "type": "text",
+              "name": "项目属性",
+              "readonly": false
+            },
+            {
+              "id": "startDate",
+              "value": "2022-01-26",
+              "type": "date",
+              "name": "项目提交时间",
               "readonly": false
             }
           ]
@@ -306,32 +257,43 @@
     {
       "id": 3,
       "level": 0,
-      "name": "估算规则管理",
-      "shortName": "估算规则",
-      "icon": "money-bill-1-wave",
+      "name": "投标企业",
+      "shortName": "投标企业",
+      "icon": "building-user",
       "formInfo": {
         "canAdd": true,
-        "search": [
-        ],
+        "search": [{
+            "id": "name",
+            "name": "名称"
+          },
+          {
+            "id": "type",
+            "name": "类型",
+            "type": "select",
+            "options": [{
+              "label": "全部",
+              "selected": true
+            }]
+          }],
         "list": {
           "selectable": true,
           "columns": [
-            "规则名称",
-            "水费标准",
-            "电费标准",
-            "管理费标准",
-            "材料费用标准",
-            "添加时间",
+            "企业名称",
+            "企业类型",
+            "企业规模",
+            "企业联系人",
+            "联系方式",
+            "企业资质等级",
             "操作"
           ],
           "data": [
             [
-              "规则11",
-              "3元/吨",
-              "1元/度",
-              "200元/月",
-              "30000元/吨",
-              "2023-03-01",
+              "四川小人物大梦想开发公司",
+              "初创公司",
+              "0-20人",
+              "风雨行",
+              "手机：18296500025<br>微信: 18296500025<br>邮箱: 18296500025@163.com",
+              "A",
               [
                 {
                   "label": "编辑",
@@ -348,12 +310,12 @@
               ]
             ],
             [
-              "规则11",
-              "3元/吨",
-              "1元/度",
-              "200元/月",
-              "30000元/吨",
-              "2023-03-01",
+              "四川小人物大梦想开发公司",
+              "初创公司",
+              "0-20人",
+              "风雨行",
+              "手机：18296500025<br>微信: 18296500025<br>邮箱: 18296500025@163.com",
+              "A",
               [
                 {
                   "label": "编辑",
@@ -372,45 +334,96 @@
           ],
           "fields": [
             {
-              "id": "ruleNo",
-              "value": "gz202310210001",
+              "id": "name",
+              "value": "四川小人物大梦想开发公司",
               "type": "text",
-              "name": "规则编号",
+              "name": "企业名称",
               "readonly": true
             },
             {
-              "id": "ruleName",
-              "value": "规则111",
-              "type": "text",
+              "id": "type",
+              "options":[{
+                "label":"初创企业",
+                "selected": true
+              },{
+                "label":"天使轮"
+              },{
+                "label":"A轮融资"
+              },{
+                "label":"B轮融资"
+              },{
+                "label":"C轮融资"
+              },{
+                "label":"已上市"
+              }],
+              "type": "select",
+              "name": "企业类型",
+              "readonly": false
+            },
+            {
+              "id": "ability",
+              "options":[{
+                "label":"0-20人",
+                "selected": true
+              },{
+                "label":"20-50人"
+              },{
+                "label":"50-100人"
+              },{
+                "label":"100-200人"
+              },{
+                "label":"200-500人"
+              },{
+                "label":"500人以上"
+              }],
+              "type": "select",
               "name": "规则名称",
               "readonly": false
             },
             {
-              "id": "water",
-              "value": "3",
+              "id": "contactPerson",
+              "value": "风雨行",
               "type": "text",
-              "name": "水费（元/吨）",
+              "name": "联系人",
               "readonly": false
             },
             {
-              "id": "electricity",
-              "value": "1",
-              "type": "text",
-              "name": "电费（元/度）",
+              "id": "mobile",
+              "value": "18296501023",
+              "type": "tel",
+              "name": "招标方",
               "readonly": false
             },
             {
-              "id": "manage",
-              "value": "200",
-              "type": "text",
-              "name": "管理费（元/月）",
+              "id": "email",
+              "value": "18296501023@163.com",
+              "type": "email",
+              "name": "邮箱",
               "readonly": false
             },
             {
-              "id": "material",
-              "value": "30000",
+              "id": "wechat",
+              "value": "18296501023",
               "type": "text",
-              "name": "材料费（元/吨）",
+              "name": "微信",
+              "readonly": false
+            },
+            {
+              "id": "type",
+              "options":[{
+                "label":"A",
+                "selected": true
+              },{
+                "label":"B"
+              },{
+                "label":"C"
+              },{
+                "label":"D"
+              },{
+                "label":"未评定"
+              }],
+              "type": "select",
+              "name": "资质等级",
               "readonly": false
             }
           ]
@@ -420,29 +433,47 @@
     {
       "id": 4,
       "level": 0,
-      "name": "问题管理",
-      "shortName": "提问",
-      "icon": "circle-question",
+      "name": "评标专家",
+      "shortName": "评标专家",
+      "icon": "user",
       "formInfo": {
         "canAdd": true,
-        "search": [
+        "search": [{
+          "id": "name",
+          "name": "名称"
+        },
+          {
+            "id": "professional",
+            "name": "专业",
+            "type": "select",
+            "options": [{
+              "label": "全部",
+              "selected": true
+            }]
+          },{
+            "id": "type",
+            "name": "类型",
+            "type": "select",
+            "options": [{
+              "label": "全部",
+              "selected": true
+            }]
+          }
         ],
         "list": {
           "selectable": true,
           "columns": [
-            "问题类型",
-            "问题出现时间",
-            "问题解决方案",
-            "问题解决结果",
-            "问题解决时间",
+            "专家名称",
+            "专家领域",
+            "所属机构",
+            "联系方式",
             "操作"
           ],
           "data": [[
-            "初级问题",
-            "2023-02-12 11:11:11",
-            "与提出者协商一致,暂不解决",
-            "已解决",
-            "2023-02-12 13:59:59",
+            "徐忠达",
+            "农业、化肥、大中小型农耕机械化",
+            "四川农科院",
+            "手机：<a href=#>18296500025</a><br>微信: <a href=#>18296500025</a><br>邮箱: <a href=#>18296500025@163.com</a>",
             [
               {
                 "label": "编辑",
@@ -464,11 +495,10 @@
               }
             ]
           ],[
-            "初级问题",
-            "2023-02-12 11:11:11",
-            "与提出者协商一致,暂不解决",
-            "已解决",
-            "2023-02-12 13:59:59",
+            "徐忠达",
+            "农业、化肥、大中小型农耕机械化",
+            "四川农科院",
+            "手机：<a href=#>18296500025</a><br>微信: <a href=#>18296500025</a><br>邮箱: <a href=#>18296500025@163.com</a>",
             [
               {
                 "label": "编辑",
@@ -491,81 +521,67 @@
             ]
           ]],
           "fields": [{
-            "id": "question",
-            "value": "这是一个很严肃的问题",
+            "id": "name",
+            "value": "徐忠达",
             "type": "text",
-            "name": "标题",
+            "name": "专家名称",
             "readonly": false
           },{
-            "id": "type",
+            "id": "professional",
             "options": [
               {
-                "label": "初级问题",
+                "label": "水电"
+              },
+              {
+                "label": "机械"
+              },
+              {
+                "label": "火电"
+              },
+              {
+                "label": "农业",
+                "selected": true
+              },
+              {
+                "label": "化肥",
+                "selected": true
+              },
+              {
+                "label": "大中小型农耕机械化",
                 "selected": true
               }
             ],
             "type": "select",
-            "multiple": false,
-            "name": "问题类型",
-            "readonly": false
-          },{
-            "id": "serious",
-            "options": [
-              {
-                "label": "一般",
-                "selected": true
-              }
-            ],
-            "type": "select",
-            "multiple": false,
-            "name": "严重程度",
-            "readonly": false
-          },{
-            "id": "progress",
-            "options": [
-              {
-                "label": "已处理",
-                "selected": true
-              }
-            ],
-            "type": "select",
-            "multiple": false,
-            "name": "解决结果",
+            "multiple": true,
+            "name": "专家领域",
             "readonly": false
           },
             {
-              "id": "appearTime",
-              "value": "2023-02-11 11:11:11",
-              "type": "datetime",
-              "name": "出现时间",
+              "id": "depart",
+              "value": "四川农科院",
+              "type": "text",
+              "name": "所属机构",
               "readonly": false
             },
             {
-              "id": "resolveTime",
-              "value": "2023-02-11 14:11:11",
-              "type": "datetime",
-              "name": "解决时间",
+              "id": "mobile",
+              "value": "18296501023",
+              "type": "tel",
+              "name": "招标方",
               "readonly": false
             },
             {
-              "id": "des",
-              "value": "这是一个很严肃的问题，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重，很严重很严重",
-              "type": "fulltext",
-              "name": "详细描述",
+              "id": "email",
+              "value": "18296501023@163.com",
+              "type": "email",
+              "name": "邮箱",
               "readonly": false
             },
             {
-              "id": "solution",
-              "value": "已经解决了\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00",
-              "type": "fulltext",
-              "name": "解决方案",
-              "readonly": false
-            },
-            {
-              "id": "satisfaction",
-              "value": "4",
-              "type": "star",
-              "name": "客户满意度",
+              "id": "wechat",
+              "value": "18296501023",
+              "type": "text",
+              "name": "微信",
               "readonly": false
             }]
         }
@@ -574,37 +590,272 @@
     {
       "id": 5,
       "level": 0,
-      "name": "用户管理",
-      "shortName": "用户信息",
-      "icon": "users",
+      "name": "投标文件",
+      "shortName": "投标文件",
+      "icon": "file",
       "formInfo": {
         "canAdd": true,
         "search": [{
-          "id": "account",
-          "name": "用户账号",
+          "id": "name",
+          "name": "文件名称",
           "type": "text"
         },{
-          "id": "role",
-          "name": "角色",
+          "id": "projectName",
+          "name": "项目名称",
           "type": "text"
+        },{
+          "id": "projectNo",
+          "name": "项目编号",
+          "type": "text"
+        },{
+          "id": "projectType",
+          "name": "项目类型",
+          "type": "select",
+          "options": [{
+            "label": "全部",
+            "selected": true
+          }]
         }
         ],
         "list": {
           "selectable": true,
           "columns": [
-            "用户账号",
-            "密码",
-            "角色",
-            "添加时间",
-            "启/禁用",
+            "投标状态",
+            "投标文件名称",
+            "项目名称",
+            "项目编号",
+            "项目类型",
+            "项目所在地",
+            "项目地址",
+            "投标负责人",
+            "标书制作人",
+            "项目概况",
+            "投标时间",
+            "操作"
+          ],
+          "data": [
+            [
+            "已中标",
+            "<div class='btn-text'>初级代码投标文件（定稿）.pdf</div>",
+            "南方电网物资管理系统开发",
+            "xm202311071017151",
+            "互联网",
+            "四川省成都市高新区蜀绣西路366号",
+            "四川省达州市宣汉县华景镇鲢鱼村2组101-102号",
+            "李经理",
+            "风雨行",
+            "一轮开发已结束，等待开启后续迭代",
+            "2020-04-15",
+            [
+              {
+              "label": "编辑",
+              "type": "button",
+              "cls": "primary",
+              "id": "edit"
+            },
+              {
+                "label": "删除",
+                "type": "button",
+                "cls": "primary tip-error",
+                "id": "del"
+              },
+              {
+                "label": "查看",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail"
+              },{
+              "label": "投标",
+              "type": "button",
+              "cls": "primary",
+              "id": "detail",
+              "suffix": "审核",
+              "btnLabel": ["通过","不通过"]
+            }]
+          ],[
+            "已中标",
+            "<div class='btn-text'>初级代码投标文件（定稿）.pdf</div>",
+            "南方电网物资管理系统开发",
+            "xm202311071017151",
+            "已结束",
+            "四川省成都市高新区蜀绣西路366号",
+            "四川省达州市宣汉县华景镇鲢鱼村2组101-102号",
+            "李经理",
+            "风雨行",
+            "一轮开发已结束，等待开启后续迭代",
+            "2020-04-15",
+            [{
+              "label": "编辑",
+              "type": "button",
+              "cls": "primary",
+              "id": "edit"
+            },
+              {
+                "label": "删除",
+                "type": "button",
+                "cls": "primary tip-error",
+                "id": "del"
+              },
+              {
+                "label": "查看",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail"
+              },
+              {
+                "label": "投标",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail",
+                "suffix": "审核",
+                "btnLabel": ["通过","不通过"]
+              }]
+          ]
+          ],
+          "fields": [{
+            "id": "state",
+            "options": [
+              {
+                "label": "已投标",
+                "selected": true
+              },{
+                "label": "初次审核"
+              },{
+                "label": "部门评审"
+              },{
+                "label": "专家评审"
+              },{
+                "label": "驳回"
+              },{
+                "label": "待发函"
+              },{
+                "label": "已发函"
+              },{
+                "label": "已签合同"
+              },{
+                "label": "进行中"
+              },{
+                "label": "验收中"
+              },{
+                "label": "适用中"
+              },{
+                "label": "已结束"
+              }
+            ],
+            "type": "select",
+            "multiple": false,
+            "name": "投标状态",
+            "readonly": false
+          },{
+            "id": "file",
+            "value": ["初级代码投标文件（定稿）.pdf"],
+            "type": "file",
+            "name": "投标文件名称",
+            "readonly": true
+          },{
+            "id": "projectName",
+            "value": "南方电网物资管理系统开发",
+            "type": "text",
+            "name": "项目名称",
+            "readonly": true
+          },{
+            "id": "projectNo",
+            "value": "xm202311071017151",
+            "type": "text",
+            "name": "项目编号",
+            "readonly": true
+          },
+            {
+              "id": "type",
+              "options": [{
+                "label": "请选择"
+              },{
+                "label": "互联网",
+                "selected": true
+              }],
+              "type": "select",
+              "name": "项目类型",
+              "readonly": false
+            },
+            {
+              "id": "areaProject",
+              "value": "四川省成都市高新区蜀绣西路366号",
+              "type": "text",
+              "name": "项目所在地",
+              "readonly": false
+            },
+            {
+              "id": "areaLocation",
+              "value": "四川省达州市宣汉县华景镇鲢鱼村2组101-102号",
+              "type": "text",
+              "name": "项目所在地",
+              "readonly": false
+            },
+            {
+              "id": "contact",
+              "value": "李经理",
+              "type": "text",
+              "name": "投标负责人",
+              "readonly": false
+            },
+            {
+              "id": "creator",
+              "value": "风雨行",
+              "type": "text",
+              "name": "标书制作人",
+              "readonly": false
+            },
+            {
+              "id": "des",
+              "value": "一轮开发已结束，等待开启后续迭代",
+              "type": "textarea",
+              "name": "项目描述",
+              "readonly": false
+            },
+            {
+            "id": "pushDate",
+            "value": "2020-04-15",
+            "type": "date",
+            "name": "投标时间",
+            "readonly": false
+          }]
+        }
+      }
+    },
+    {
+      "id": 5,
+      "level": 0,
+      "name": "评标流程",
+      "shortName": "评标流程",
+      "icon": "gears",
+      "formInfo": {
+        "canAdd": true,
+        "search": [{
+          "id": "name",
+          "name": "流程名称",
+          "type": "text"
+        },{
+          "id": "state",
+          "name": "流程状态",
+          "type": "select",
+          "options": [{
+            "label": "全部",
+            "selected": true
+          }]
+        }
+        ],
+        "list": {
+          "selectable": true,
+          "columns": [
+            "流程名称",
+            "流程状态",
+            "流程规则",
             "操作"
           ],
           "data": [[
-            "13254451",
-            "123456",
-            "管理员、总经办",
-            "2023-01-01",
-            "禁用",
+            "第一条审核流程",
+            "启用",
+            "<div style='text-align: left;'>1、巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉<br>2、巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉<br>3、按吧按吧按吧按吧爸爸</div>",
             [{
               "label": "编辑",
               "type": "button",
@@ -624,11 +875,9 @@
                 "id": "detail"
               }]
           ],[
-            "13254451",
-            "123456",
-            "管理员、总经办",
-            "2023-01-01",
+            "第一条审核流程",
             "启用",
+            "<div style='text-align: left;'>1、巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉<br>2、巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉<br>3、按吧按吧按吧按吧爸爸</div>",
             [{
               "label": "编辑",
               "type": "button",
@@ -649,47 +898,137 @@
               }]
           ]],
           "fields": [{
-            "id": "userNo",
-            "value": "yh20230111012",
+            "id": "name",
+            "value": "第一条审核流程",
             "type": "text",
-            "name": "用户编号",
+            "name": "流程名称",
+            "readonly": true
+          },{
+            "id": "state",
+            "value": "20230111012",
+            "type": "switch",
+            "value": "on",
+            "options": {
+              "on": "启用",
+              "off": "禁用"
+            },
+            "name": "流程状态",
+            "readonly": true
+          },{
+            "id": "details",
+            "value": "1、巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉<br>2、巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉<br>3、按吧按吧按吧按吧爸爸",
+            "type": "fulltext",
+            "name": "流程规则",
+            "readonly": true
+          }]
+        }
+      }
+    },
+    {
+      "id": 5,
+      "level": 0,
+      "name": "中标结果",
+      "shortName": "中标结果",
+      "icon": "handshake",
+      "formInfo": {
+        "search": [{
+          "id": "projectName",
+          "name": "项目名称",
+          "type": "text"
+        },{
+          "id": "inUnit",
+          "name": "招标单位",
+          "type": "text"
+        },{
+          "id": "unit",
+          "name": "投标单位",
+          "type": "text"
+        }
+        ],
+        "list": {
+          "selectable": true,
+          "columns": [
+            "项目名称",
+            "招标单位",
+            "投标单位",
+            "投标结果",
+            "中标时间",
+            "操作"
+          ],
+          "data": [[
+            "南方电网物资管理系统开发",
+            "国家电网四川电网分部",
+            "四川小人物大梦想开发公司",
+            "已中标",
+            "2023-01-01",
+            [
+              {
+                "label": "查看",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail"
+              }]
+          ],[
+            "南方电网物资管理系统开发",
+            "国家电网四川电网分部",
+            "四川小人物大梦想开发公司",
+            "已中标",
+            "2023-01-01",
+            [
+              {
+                "label": "查看",
+                "type": "button",
+                "cls": "primary",
+                "id": "detail"
+              }
+            ]
+          ]
+          ],
+          "fields": [{
+            "id": "userNo",
+            "value": "南方电网物资管理系统开发",
+            "type": "text",
+            "name": "项目名称",
             "readonly": true
           },{
             "id": "account",
-            "value": "20230111012",
+            "value": "国家电网四川电网分部",
             "type": "text",
-            "name": "账号",
+            "name": "招标单位",
             "readonly": true
           },{
             "id": "password",
-            "value": "123456",
-            "type": "password",
-            "name": "密码",
+            "value": "四川小人物大梦想开发公司",
+            "type": "text",
+            "name": "投标单位",
             "readonly": true
           },{
             "id": "role",
             "options": [
               {
-                "label": "管理员",
+                "label": "未投标"
+              },{
+                "label": "未中标",
                 "selected": true
               },{
-                "label": "总经办",
-                "selected": true
+                "label": "已中标"
               }
             ],
             "type": "select",
-            "multiple": true,
-            "name": "角色",
+            "multiple": false,
+            "name": "投标结果",
             "readonly": false
           },{
             "id": "state",
-            "options": {
-              "on": "正常",
-              "off": "禁用"
-            },
-            "value": "on",
-            "type": "switch",
-            "name": "状态",
+            "value": "2020-02-12",
+            "type": "date",
+            "name": "中标时间",
+            "readonly": false
+          },{
+            "id": "reason",
+            "value": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+            "type": "textarea",
+            "name": "备注",
             "readonly": false
           }]
         }

@@ -2,7 +2,7 @@
   <div class="background-mask" v-if="show"></div>
   <div :class="[`edit-form`,opType]" v-if="show">
     <div class="form-title">
-      <h1>{{title || label + "-" + opLabel}}</h1>
+      <h1>{{title || label + "-" + opLabel + `${suffix || ''}`}}</h1>
     </div>
     <form action="#" class="form-body">
       <normal-form :fields="info" :verify="false" :readonly="readonly" />
@@ -39,6 +39,10 @@ export default {
       default: () => ""
     },
     title: {
+      type: String,
+      default: ""
+    },
+    suffix: {
       type: String,
       default: ""
     },
