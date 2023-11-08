@@ -18,8 +18,8 @@
     </div>
     <div class="main-body" v-if="!form?.empty">
       <search-com :fields="form.search" v-if="form.search && form.search.length" />
-      <div class="btn-row btn-group btn-middle" v-if="form.canAdd">
-        <div class="btn btn-primary" @click="showAdd">新增</div>
+      <div class="btn-row btn-group" v-if="form.canAdd">
+        <div class="btn btn-middle btn-primary" @click="showAdd">新增</div>
       </div>
       <list-table :info="formList" @click="click"></list-table>
       <edit-form :show="showEditForm" :label="curMenu.name" :info="editForm" :op-type="opType" :btn-label="btnLabel" :title="title" :suffix="suffix" @close="hideEditForm" />

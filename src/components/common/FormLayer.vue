@@ -7,8 +7,8 @@
     <div class="normal-form">
       <normal-form :fields="formInfo.fields" :verify="formInfo.verify" :verify-type="formInfo.verifyType" />
     </div>
-    <div class="btn-group btn-middle" v-if="btns.length">
-      <div v-for="(btn) in btns" v-bind:key="btn.type" :class="btn.cls" v-text="btn.label" @click="btn.click"></div>
+    <div class="btn-group" v-if="btns.length">
+      <div v-for="(btn) in btns" v-bind:key="btn.type" :class="['btn','btn-middle',...btn.cls]" v-text="btn.label" @click="btn.click"></div>
     </div>
   </div>
 </template>

@@ -80,8 +80,8 @@
       <a class="file-list link" href="#">{{file}}</a>
       <div class="btn btn-text tip-error" v-if="!readonly && !field.readonly">×</div>
     </div>
-    <div class="btn btn-middle">
-      <div class="btn-auto btn-upload btn-primary" v-if="!readonly && !field.readonly">上传</div>
+    <div class="btn-group">
+      <div class="btn btn-middle btn-auto btn-upload btn-primary" v-if="!readonly && !field.readonly">上传</div>
     </div>
   </div>
   <div class="form-input start-container" v-if="field.type === 'star'">

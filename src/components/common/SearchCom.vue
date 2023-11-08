@@ -4,9 +4,9 @@
       <div class="form-label">{{field.name}}：</div>
       <field-com :field="field" />
     </div>
-    <div class="search-form-item btn-group btn-middle">
-      <div class="btn-primary">确定</div>
-      <div class="btn-default">取消</div>
+    <div class="search-form-item btn-group">
+      <div class="btn btn-middle btn-primary">确定</div>
+      <div class="btn btn-middle btn-default">取消</div>
     </div>
   </div>
 </template>

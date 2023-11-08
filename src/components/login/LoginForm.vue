@@ -13,10 +13,10 @@
                   @confirm="confirm"
                   @cancel="cancel"
       />
-      <div class="form-item btn-group btn-middle">
-        <div class="btn-primary" @click="login" v-if="formType == 'login'">登录</div>
-        <div class="form-forget btn-text" @click="forgetPwd" v-if="formType == 'login'">忘记密码</div>
-        <div class="btn-primary" @click="confirm" v-if="formType !== 'login'">确认</div>
+      <div class="form-item btn-group">
+        <div class="btn btn-middle btn-primary" @click="login" v-if="formType == 'login'">登录</div>
+        <div class="btn btn-middle form-forget btn-text" @click="forgetPwd" v-if="formType == 'login'">忘记密码</div>
+        <div class="btn btn-middle btn-primary" @click="confirm" v-if="formType !== 'login'">确认</div>
       </div>
     </form>
   </div>

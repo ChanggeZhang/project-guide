@@ -17,8 +17,8 @@
         </td>
         <td class="table-cell" v-for="(cell,k) in row" v-bind:key="k">
           <div class="cell-content" v-if="typeof cell === 'string'" v-html="cell"></div>
-          <div class="btn-group btn-text" v-if="cell instanceof Array">
-            <div v-for="(btn) in cell" v-bind:key="btn.type" :class="btn.cls" @click="clickEvent(btn)">
+          <div class="btn-group" v-if="cell instanceof Array">
+            <div v-for="(btn) in cell" v-bind:key="btn.type" :class="['btn','btn-text',...btn.cls]" @click="clickEvent(btn)">
               <font-awesome-icon :title="btn.label" :icon="['fa',`fa-${btn.icon}`]" v-if="btn.type == 'icon'"></font-awesome-icon>
               <span v-else>{{btn.label}}</span>
             </div>

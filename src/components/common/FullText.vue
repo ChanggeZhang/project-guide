@@ -1,7 +1,7 @@
 <template>
   <div class="full-text">
-    <div class="btn-group btn-small">
-      <div class="btn btn-tab" @click="shiftFullScreen">
+    <div class="btn-group">
+      <div class="btn btn-small btn-tab" @click="shiftFullScreen">
         <font-awesome-icon :icon="`fa-solid fa-${this.fulledScreen ? 'compress' : 'expand'}`" />
         {{this.fulledScreen ? '取消全屏' : '全屏'}}
       </div>
@@ -13,6 +13,7 @@
 
 <script>
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import shitFullScreen from "@/js/menu/shitFullScreen";
 
 export default {
   name: "FullText",
@@ -40,75 +41,23 @@ export default {
     shiftFullScreen(){
       let prefix = this.$webPrefix
       const dom = this.$refs["text-content"]
-      if(!this.alreadyFull()) {
-        if (this.requestFullscreen(dom, prefix)) {
+      if(!shitFullScreen.alreadyFull()) {
+        if (shitFullScreen.requestFullscreen(dom, prefix)) {
           this.fulledScreen = true
         }
       }else{
-        if (this.exitRequestFullscreen(dom, prefix)) {
+        if (shitFullScreen.exitRequestFullscreen(prefix)) {
           this.fulledScreen = false
         }
       }
       this.editable = this.fulledScreen && !this.readonly
     },
-    requestFullscreen(dom,prefix){
-      try {
-        if (prefix == 'moz') {
-          dom.mozRequestFullscreen()
-        } else if (prefix == 'ms') {
-          dom.msRequestFullscreen()
-        } else if (prefix == 'webkit') {
-          dom.webkitRequestFullscreen()
-        } else {
-          dom.requestFullscreen()
-        }
-        return true;
-      } catch (e) {
-        return false;
-      }
-    },
-    exitRequestFullscreen(dom,prefix){
-      try {
-        if (prefix == 'moz') {
-          document.mozExitFullscreen()
-        } else if (prefix == 'ms') {
-          document.msExitFullscreen()
-        } else if (prefix == 'webkit') {
-          document.webkitExitFullscreen()
-        } else {
-          document.exitFullscreen()
-        }
-        return true;
-      } catch (e) {
-        return false;
-      }
-    },
-    alreadyFull(){
-        return (
-            document.mozFullscreenElement ||
-            document.webkitFullscreenElement ||
-            document.msFullscreenElement ||
-            document.fullscreenElement
-        )
-    },
     fullscreenChange(){
-      this.fulledScreen = this.alreadyFull()
+      this.fulledScreen = shitFullScreen.alreadyFull()
       this.editable = this.fulledScreen && !this.readonly
     },
     listenFullChange(){
-      let that = this
-      document.onfullscreenchange = () => {
-        that.fullscreenChange()
-      }
-      document.onmozfullscreenchange = () => {
-        that.fullscreenChange()
-      }
-      document.onwebkitfullscreenchange = () => {
-        that.fullscreenChange()
-      }
-      document.onMSFullscreenChange = () => {
-        that.fullscreenChange()
-      }
+      shitFullScreen.listenFullChange(this.fullscreenChange)
     }
   }
 }

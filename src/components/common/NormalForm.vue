@@ -9,9 +9,9 @@
     <input type="text" class="form-input form-verify" :required="verify" />
     <div class="verify-img"></div>
   </div>
-  <div class="form-item verify btn-auto" v-else-if="verify && verifyType == 'sms'">
+  <div class="form-item verify" v-else-if="verify && verifyType == 'sms'">
     <input type="text" class="form-input form-verify" :required="verify" />
-    <div class="btn btn-primary">发送验证码</div>
+    <div class="btn btn-auto btn-primary">发送验证码</div>
   </div>
 </template>
 

@@ -7,9 +7,9 @@
     <form action="#" class="form-body">
       <normal-form :fields="info" :verify="false" :readonly="readonly" />
     </form>
-    <div class="btn-group btn-middle">
-      <div class="btn-primary" @click="close">{{(btnLabel && btnLabel[0]) || "确认"}}</div>
-      <div class="btn-default" @click="close">{{(btnLabel && btnLabel[1]) || "取消"}}</div>
+    <div class="btn-group">
+      <div class="btn btn-primary btn-middle" @click="close">{{(btnLabel && btnLabel[0]) || "确认"}}</div>
+      <div class="btn btn-default btn-middle" @click="close">{{(btnLabel && btnLabel[1]) || "取消"}}</div>
     </div>
   </div>
 </template>

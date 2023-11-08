@@ -42,9 +42,9 @@
         </div>
       </div>
     </div>
-    <div class="btn-group btn-middle">
-      <div class="btn-primary" @click="submit">设置</div>
-      <div class="btn-text" @click="close">取消</div>
+    <div class="btn-group">
+      <div class="btn btn-middle btn-primary" @click="submit">设置</div>
+      <div class="btn btn-middle btn-text" @click="close">取消</div>
     </div>
   </div>
 </template>

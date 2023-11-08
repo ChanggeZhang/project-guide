@@ -10,8 +10,8 @@
       </div>
       <div class="content" v-html="message"></div>
     </div>
-    <div class="btn-group btn-middle" v-if="btns.length">
-      <div v-for="(btn) in btns" v-bind:key="btn.type" :class="btn.cls" v-text="btn.label" @click="btn.click"></div>
+    <div class="btn-group" v-if="btns.length">
+      <div v-for="(btn) in btns" v-bind:key="btn.type" :class="['btn','btn-middle',...btn.cls]" v-text="btn.label" @click="btn.click"></div>
     </div>
   </div>
 </template>

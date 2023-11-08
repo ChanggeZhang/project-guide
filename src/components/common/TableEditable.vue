@@ -1,8 +1,8 @@
 <template>
   <div class="edit-table">
-    <div class="btn-group btn-text" v-if="!readonly">
-      <div class="btn" v-if="!canEdit" @click="editable">添加数据</div>
-      <div class="btn" v-if="canEdit" @click="pickHtml">提交</div>
+    <div class="btn-group" v-if="!readonly">
+      <div class="btn btn-text" v-if="!canEdit" @click="editable">添加数据</div>
+      <div class="btn btn-text" v-if="canEdit" @click="pickHtml">提交</div>
     </div>
     <div class="table" v-if="!canEdit">
       <div class="table-body-row" v-for="(val,key) in tableValue" v-bind:key="val">

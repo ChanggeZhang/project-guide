@@ -10,6 +10,7 @@
     --menu-font-size: 20px;
     --layer-width: 35vw;
     --btn-middle-height: 2rem;
+    --btn-middle-width: 7rem;
     --verify-img-width: 99.3px;
     --bg-image: url("https://www.aftermath.com/wp-content/uploads/26297-cooperation-handshake.jpg");
     --background-color: #dfdfdf;
@@ -18,8 +19,8 @@
     --form-label-width: 12rem;
     --star-color: #f1aa42;
     --empty-padding: 30px;
-    --main-block-width: 600px;
-    --main-block-height: 400px;
+    --main-block-width: 400px;
+    --main-block-height: 300px;
     --main-block-title-height: 40px;
     --main-block-padding: 30px;
 }
@@ -153,6 +154,7 @@ body {
 .btn-group{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 7px;
 }
 
@@ -160,6 +162,7 @@ body {
     width:100%!important;
     padding-top: 5px;
     justify-content: end;
+    align-items: center;
     margin: 0px 0px 15px 0px!important;
     min-height: 1.8rem;
 }
@@ -168,7 +171,7 @@ body {
     justify-content: flex-end;
 }
 
-.btn-middle,.btn-middle >*{
+.btn-middle{
     width: 7rem;
     height: var(--btn-middle-height);
     line-height: var(--btn-middle-height);
@@ -184,16 +187,17 @@ body {
     cursor: pointer;
 }
 
-.btn-text,.btn-text >*{
+.btn-text{
     width: max-content;
     height: 1rem;
     line-height: 1rem;
     margin: 3px;
     color: var(--menu-background-color);
     text-decoration: underline;
+    text-align: center;
 }
 
-.btn-text,.btn-text >*:hover{
+.btn-text:hover{
     width: max-content;
     height: 1rem;
     line-height: 1rem;
@@ -202,13 +206,17 @@ body {
     color: #00abff;
 }
 
-.btn-auto,.btn-auto >*{
+.layer .btn-text,.layer .btn-text:hover{
+    min-width: var(--btn-middle-width);
+}
+
+.btn-auto{
     padding: 4px;
     vertical-align: center;
     margin: 15px;
 }
 
-.btn-primary,.btn-primary >*{
+.btn-primary{
     color: #fff;
     background-color: var(--menu-background-color);
 }
@@ -687,4 +695,10 @@ input:required,select:required,textarea:required{
     border-bottom-style: solid;
     border-bottom-color: var(--menu-background-color);
     filter: opacity(0.6);
+}
+
+.main-block-title >.btn{
+    width: max-content!important;
+    text-align: right;
+    margin-right: var(--layer-padding);
 }
