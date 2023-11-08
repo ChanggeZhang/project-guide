@@ -1,5 +1,7 @@
+const prefix = window.$webPrefix;
+
 const ScreenShift = {
-    exitRequestFullscreen(prefix){
+    exitRequestFullscreen(){
         try {
             if (prefix == 'moz') {
                 document.mozExitFullscreen()
@@ -24,7 +26,7 @@ const ScreenShift = {
         )
     },
 
-    requestFullscreen(dom,prefix){
+    requestFullscreen(dom){
         try {
             if (prefix == 'moz') {
                 dom.mozRequestFullscreen()
