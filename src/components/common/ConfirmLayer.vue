@@ -1,14 +1,14 @@
 <template>
   <div class="background-mask" v-if="showLayer"></div>
-  <div class="layer" v-if="showLayer">
-    <div class="layer-title" :showTitle="showTitle">
+  <div :class="['layer',type === Tip.LOADING ? 'loading-layer' : '']" :style="`${this.height ? ('height: ' + this.height + ';') : ''}${this.width ? ('width: ' + this.width + ';') : ''}`" v-if="showLayer">
+    <div class="layer-title" v-if="showTitle">
         {{title}}
     </div>
     <div class="layer-body">
-      <div class="layer-icon">
+      <div :class="['layer-icon',type === Tip.LOADING ? 'loading' : '']">
         <font-awesome-icon :icon="['fa-solid', `fa-${type.icon}`]" :class="['tip',`tip-${type.id}`]"></font-awesome-icon>
       </div>
-      <div class="content" v-html="message"></div>
+      <div :class="[type === Tip.LOADING ? 'loading-content' : 'content']" v-html="message"></div>
     </div>
     <div class="btn-group" v-if="btns.length">
       <div v-for="(btn) in btns" v-bind:key="btn.type" :class="['btn','btn-middle',...btn.cls]" v-text="btn.label" @click="btn.click"></div>
@@ -18,9 +18,15 @@
 <script>
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {Tip} from "@/js/enums";
+import Layer from "@/js/plugins/Layer";
 
 export default {
   name: "ConfirmLayer",
+  computed: {
+    Tip() {
+      return Tip
+    }
+  },
   components: {FontAwesomeIcon},
   props: {
     type: {
@@ -54,6 +60,14 @@ export default {
     delayClose: {
       type: Boolean,
       default: () => true
+    },
+    width: {
+      type: String,
+      default: () => undefined
+    },
+    height: {
+      type: String,
+      default: () => undefined
     }
   },
   created() {
@@ -77,9 +91,9 @@ export default {
       this.showLayer = false
     },
     autoClose(){
-      if(!this.btns.length || this.delayClose) {
+      if(this.delayClose) {
         setTimeout(() => {
-          this.close()
+          Layer.close()
         },this.timeout)
       }
     }

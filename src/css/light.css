@@ -206,6 +206,45 @@ body {
     color: #00abff;
 }
 
+.loading-layer{
+    background-color: rgba(0,0,0,0);
+    font-size: 30px;
+    top: 46%;
+    left: 50%;
+}
+
+.loading{
+    animation: rotating infinite 1s linear;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-content:after{
+    animation: loadingcontext 1s infinite linear;
+}
+
+@keyframes loadingcontext {
+    0%{
+        content: ".";
+    }
+    50%{
+        content: "..";
+    }
+    100%{
+        content: "...";
+    }
+}
+
 .layer .btn-text,.layer .btn-text:hover{
     min-width: var(--btn-middle-width);
 }

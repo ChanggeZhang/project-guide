@@ -43,8 +43,12 @@ export default {
     exit(){
       this.hasLogin = false;
       localStorage.removeItem("hasLogin")
+      localStorage.removeItem("login.user")
     },
-    login(){
+    login(model){
+      if(model){
+        localStorage.setItem("login.user",JSON.stringify(model))
+      }
       this.hasLogin = true
       localStorage.setItem("hasLogin",this.hasLogin)
     }
@@ -53,4 +57,5 @@ export default {
 </script>
 
 <style>
+
 </style>

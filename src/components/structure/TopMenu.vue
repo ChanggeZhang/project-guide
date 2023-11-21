@@ -5,7 +5,7 @@
       {{projectInfo?.name}}
     </div>
     <div class="right">
-      <img class="avatar" :src="projectInfo?.avatar" />
+      <img class="avatar" :src="projectInfo?.avatar" @click="personalCenter" />
       <div class="btn-exit" @click="quit"><font-awesome-icon :icon="`fa-solid fa-power-off`" />退出登录</div>
       <div class="btn-exit" @click="switchTheme"><font-awesome-icon :icon="`fa-solid fa-cookie-bite`" />主题</div>
       <span  class="more" @click="showMore"><font-awesome-icon icon="fa-solid fa-caret-down" /></span>
@@ -93,7 +93,7 @@
       },
       quit(){
         this.$layer.layer({
-          tip: Tip.WARN,
+          type: Tip.WARN,
           title: '确认退出',
           message: '确定要退出系统吗？',
           btns: [{
@@ -116,6 +116,21 @@
         this.showForm = true
         menu.formInfo.label = menu.name
         this.form = menu.formInfo
+      },
+      async personalCenter(){
+        let str = localStorage.getItem("login.user");
+        const publicAddress = JSON.parse(str)['publicAddress']
+        let amounts = ''
+        for (let publicAddressKey in publicAddress) {
+          const balance = await window.web3.eth.getBalance(publicAddress[publicAddressKey])
+          amounts += `<label>账户${publicAddress[publicAddressKey]}余额：</label>${balance}<br>`
+        }
+        this.$layer.layer({
+          tip: Tip.INFO,
+          title: "个人中心",
+          message: amounts,
+          delayClose: false
+        })
       }
     }
   }

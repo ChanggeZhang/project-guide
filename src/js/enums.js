@@ -18,6 +18,10 @@ const Tip = Object.freeze({
     HELP: {
         icon: "circle-info",
         id: "help"
+    },
+    LOADING: {
+        icon: "spinner",
+        id: "loading"
     }
 })
 
