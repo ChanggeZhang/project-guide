@@ -24,7 +24,7 @@
 </template>
 <script>
   import FormLogin from "@/components/common/FormLogin.vue";
-  import Web3 from "web3";
+  import {Web3Proxy} from "@/js/utils/Store";
 
   export default {
     name: 'LoginForm',
@@ -51,8 +51,8 @@
       this.switchForm('login')
     },
     methods: {
-      login(model){
-        this.$emit('login',model)
+      login(){
+        this.$emit('login')
       },
       forgetPwd(){
         this.switchForm('forget');
@@ -71,35 +71,13 @@
         }
       },
       async metamask(){
-        if (!window.ethereum) {
-          this.$layer.error("请先安装MetaMask")
-          return
-        }
-        if (!window.web3) {
-          try {
-            await window.ethereum.enable()
-          } catch (e) {
-            if (e.code !== -32002) {
-              this.$layer.error("需要先允许MetaMask运行")
-              return
-            }
-          }
-          window.web3 = new Web3(window.ethereum)
-        }else{
-          window.web3 = new Web3(Web3.givenProvider)
-        }
-        this.web3 = window.web3
-        const that = this;
-        this.web3.eth.getAccounts().then((accounts) => {
-          if(!accounts || !accounts.length){
-            that.$layer.warn("当前账户没有钱包账户，记得创建钱包")
-          }
-          const publicAddress = accounts.map(c => c.toLowerCase())
-          // 同步信息给后台
-          that.login({
-            publicAddress
-          })
-        })
+        await Web3Proxy.login(this)
+        await this.getAccounts()
+      },
+      async getAccounts(){
+        await Web3Proxy.getWeb3Accounts(this)
+        // 同步信息给后台
+        this.login()
       }
     }
   }

@@ -44,11 +44,12 @@ export default {
       this.hasLogin = false;
       localStorage.removeItem("hasLogin")
       localStorage.removeItem("login.user")
-    },
-    login(model){
-      if(model){
-        localStorage.setItem("login.user",JSON.stringify(model))
+      if (window.web3 && window.web3.currentProvider && window.web3.currentProvider.disconnect && typeof window.web3.currentProvider.disconnect == 'function') {
+        window.web3.currentProvider.disconnect()
       }
+      delete window.web3
+    },
+    login(){
       this.hasLogin = true
       localStorage.setItem("hasLogin",this.hasLogin)
     }

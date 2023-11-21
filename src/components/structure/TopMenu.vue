@@ -31,6 +31,9 @@
   import {Tip} from "@/js/enums";
   import FormLayer from "@/components/common/FormLayer.vue";
   import ThemeSetting from "@/components/common/ThemeSetting.vue";
+  import Layer from "@/js/plugins/Layer";
+  import {Web3Proxy} from "@/js/utils/Store";
+  import Web3 from "web3";
 
   export default {
     name: "TopMenu",
@@ -118,19 +121,68 @@
         this.form = menu.formInfo
       },
       async personalCenter(){
-        let str = localStorage.getItem("login.user");
-        const publicAddress = JSON.parse(str)['publicAddress']
-        let amounts = ''
-        for (let publicAddressKey in publicAddress) {
-          const balance = await window.web3.eth.getBalance(publicAddress[publicAddressKey])
-          amounts += `<label>账户${publicAddress[publicAddressKey]}余额：</label>${balance}<br>`
-        }
+        let info = await this.renderPersonalInfo()
+        let that = this;
         this.$layer.layer({
           tip: Tip.INFO,
           title: "个人中心",
-          message: amounts,
-          delayClose: false
+          message: info,
+          delayClose: false,
+          btns: [{
+            label: "确认",
+            type: "button",
+            cls: ["btn-primary"],
+            id: "ok",
+            click: () => {
+              Layer.close()
+            }
+          },{
+            label: "同步",
+            type: "button",
+            cls: ["btn-primary"],
+            id: "sync",
+            click: async () => {
+              await Web3Proxy.getWeb3Accounts(that)
+              info = await that.renderPersonalInfo()
+              if (that.$layer.__data.vNode) {
+                that.$layer.__data.vNode.type.props.message = info
+              }
+            }
+          },{
+            label: "取消",
+            type: "button",
+            cls: ["btn-default"],
+            id: "cancel",
+            click: () => {
+              Layer.close()
+            }
+          }]
         })
+      },
+      async renderPersonalInfo(){
+        let str = localStorage.getItem("login.user");
+        const publicAddress = JSON.parse(str)['publicAddress']
+        if(!publicAddress || !publicAddress.length) return
+        let amounts = ''
+        for (let publicAddressKey in publicAddress) {
+          const w3 = new Web3(window.web3.currentProvider)
+          const balance = await w3.eth.getBalance(publicAddress[publicAddressKey])
+          amounts += `
+                    <tr>
+                      <td>${publicAddress[publicAddressKey]}</td>
+                      <td>${balance}</td>
+                    </tr>`
+        }
+        return `<table>
+                <thead>
+                    <tr>
+                        <th>账户</th><th>余额</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${amounts}
+                </tbody>
+            </table>`;
       }
     }
   }
